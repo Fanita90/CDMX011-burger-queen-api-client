@@ -12,7 +12,6 @@ export const Items = (props) => {
       <p>
         {product.name} ${product.price}.00
       </p>
-      {/*<p className="price">$ {product.price}</p>*/}
       <img className="img-item" src={product.image} />
       <p>
         <button

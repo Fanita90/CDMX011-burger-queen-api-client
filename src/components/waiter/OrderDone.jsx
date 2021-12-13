@@ -79,12 +79,17 @@ export const OrderDone = () => {
             }}
           />
         </div>
-        <section >
-        <CardDone
+        <h3>hola {waiterEmail()}</h3>
+        <section className="card-done">
+          {products.map((op) => (
+            <div key={op.id}>
+              <CardDone
                 product={products}
                 orderFinish={updateOrderFinish}
                 //reloadPage={refreshPage}
               />
+            </div>
+          ))}
         </section>
       </div>
     </>

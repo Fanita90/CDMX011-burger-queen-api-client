@@ -12,7 +12,7 @@ export const Products = (props) => {
           <Items product={p} key={p.id} sendProducts={getProducts}></Items>
         ))}
       </section>
-      <div></div>
+      {/*<div></div>*/}
     </>
   );
 };

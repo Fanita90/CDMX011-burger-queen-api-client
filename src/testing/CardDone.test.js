@@ -35,10 +35,39 @@ test("clicking the buttons", async() => {
   const component = render(
     <CardDone product={mockDataFilter} orderFinish={mockOrderFinish} />
   );
-  //component.debug()
-
+  
   const button = component.getByText("Almacenar comanda");
   fireEvent.click(button);
 
     await waitFor(() => expect(mockOrderFinish).toBeCalledTimes(1));
 });
+//describe("test window location's reload function", () => {
+//  const original = window.location;
+
+//  const refreshPage = () => {
+//    window.location.reload(true);
+//  };
+
+//  beforeAll(() => {
+//    Object.defineProperty(window, "location", {
+//      configurable: true,
+//      value: { reload: jest.fn() },
+//    });
+//  });
+
+//  afterAll(() => {
+//    Object.defineProperty(window, "location", {
+//      configurable: true,
+//      value: original,
+//    });
+//  });
+
+//  it("mocks reload function", () => {
+//    expect(jest.isMockFunction(window.location.reload)).toBe(true);
+//  });
+
+//  it("calls reload function", () => {
+//    refreshPage(); // as defined above..
+//    expect(window.location.reload).toHaveBeenCalled();
+//  });
+//});

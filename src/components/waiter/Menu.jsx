@@ -47,12 +47,12 @@ export const Menu = (props) => {
           } else {
             console.log(res);
           }
-          console.log(db)
+          console.log(db);
         });
         Swal.fire("Envio realizado con éxito");
         removeOrder();
         setDisabledBtn(true);
-        refreshPage();
+        setTimeout(() => refreshPage(), 3000);
       }
     });
   };
@@ -102,7 +102,6 @@ export const Menu = (props) => {
         )
       );
     }
-    console.log(orderProducts);
     if (orderProducts.length === 0) {
       setDisabledBtn(true);
     }
@@ -118,11 +117,10 @@ export const Menu = (props) => {
     clientName: client,
     status: "pending",
     orderProducts,
-    date: date.toLocaleString(),
+    date: date,
     total: itemsPrice,
   };
 
- 
   return (
     <div>
       <div className="menu-wrap">

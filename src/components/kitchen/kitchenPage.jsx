@@ -25,8 +25,6 @@ export const KitchenPage = () => {
       }
     });
   }, []);
-  console.log(data);
-
   data.sort(function (a, b) {
     return b.id - a.id;
   });
@@ -52,7 +50,7 @@ export const KitchenPage = () => {
       });
     } catch (error) {
       setError("Error del servidor");
-      console.log(error);
+      
     }
   };
   const filterStatus = () => {
